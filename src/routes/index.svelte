@@ -1,9 +1,8 @@
 <script>
-	export let countries
-	import CountryCard from "../components/CountryCard.svelte"
+  export let countries
+  import CountryList from '../components/CountryList.svelte'
 </script>
 
-{#each countries as country}
-<CountryCard country={country}/>
-{:else} error
-{/each}
+<div class="container">
+  <CountryList {countries} />
+</div>
