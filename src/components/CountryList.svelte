@@ -23,7 +23,21 @@
       return x.name.common.toLowerCase().includes(name.toLowerCase())
     })
   }
+
   const filterByRegion = (region) => [...countriesList].filter((x) => x.region == region)
+
+  const sortBy = (sortField, sortOrder) => {
+    const arr = [...countriesList]
+    switch (sortField) {
+      case 'name':
+        arr.sort((a) => a.name.common)
+      case 'region':
+        arr.sort((a) => a.region)
+      case 'population':
+        arr.sort((a, b) => a.population - b.population)
+    }
+    return sortOrder == 'asc' ? arr : arr.reverse()
+  }
 
   const handleFilterClick = () => {
     showFilter = !showFilter
