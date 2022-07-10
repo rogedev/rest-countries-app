@@ -1,8 +1,8 @@
 <script>
   export let countries
   import CountryList from '../components/CountryList.svelte'
+  import Header from '../components/Header.svelte'
 </script>
 
-<div class="container">
-  <CountryList {countries} />
-</div>
+<Header />
+<CountryList {countries} />
