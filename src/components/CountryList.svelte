@@ -24,7 +24,7 @@
     })
   }
 
-  const filterByRegion = (region) => [...countriesList].filter((x) => x.region == region)
+  const filterByRegion = (region) => [...countriesList].filter((x) => x.region.toLowerCase() == region.toLowerCase())
 
   const sortBy = (sortField, sortOrder) => {
     const arr = [...countriesList]
