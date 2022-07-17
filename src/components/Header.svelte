@@ -1,9 +1,18 @@
+<script>
+  export let mode = false
+  const toggleMode = () => {
+    mode = !mode
+  }
+</script>
+
 <div class="header">
   <div class="headerWrapper">
     <h1>Where in the world?</h1>
-    <a class="darkModeBtn" href="/">
-      <div><i class="far fa-moon" /></div>
-      <p>Dark Mode</p>
+    <a class="darkModeBtn" on:click={toggleMode} href="/">
+      <div>
+        <i class=" {mode ? 'fa-solid' : 'fa-regular'} fa-moon" />
+      </div>
+      <p>{mode ? 'Dark Mode' : 'Light Mode'}</p>
     </a>
   </div>
 </div>
