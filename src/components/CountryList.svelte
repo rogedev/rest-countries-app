@@ -5,12 +5,11 @@
 
   export let countries
 
-  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania','All']
 
   let countriesList = []
   let nameFilter = null
   let regionFilter = null
-  let showFilter = false
 
   onMount(async () => (countriesList = [...countries]))
 
@@ -25,8 +24,10 @@
     })
   }
 
-  const filterByRegion = (region) =>
-    [...countriesList].filter((x) => x.region.toLowerCase() == region.toLowerCase())
+  const filterByRegion = (region) => {
+    if(region.toLowerCase() === 'all')  return countriesList
+    return [...countriesList].filter((x) => x.region.toLowerCase() == region.toLowerCase())
+  }
 
   const sortBy = (sortField, sortOrder) => {
     const arr = [...countriesList]
@@ -63,6 +64,7 @@
         items={regions}
         value={regionFilter}
         on:select={onChangeSelect}
+        isSearchable="true"
         placeholder="Filter by Region"
       />
     </div>
