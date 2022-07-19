@@ -3,7 +3,7 @@
   const formatNumbers = (value) => `${value.toLocaleString()}`
 </script>
 
-<a class="country" href="/">
+<a class="country" href="/{country.name.common.toLowerCase()}">
   <img class="flag" src={country.flags.png} alt={country.name.common} />
   <div class="text">
     <h1>{country.name.common}</h1>
