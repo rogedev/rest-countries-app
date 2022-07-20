@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import Header from '../components/Header.svelte'
   import CountryCard from '../components/CountryCard.svelte'
   export let country
@@ -7,3 +6,5 @@
 
 <Header />
 <CountryCard country={country[0]} />
+
+<!-- TODO  country details component -->

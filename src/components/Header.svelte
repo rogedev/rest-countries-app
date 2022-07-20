@@ -7,7 +7,7 @@
 
 <div class="header">
   <div class="headerWrapper">
-    <h1>Where in the world?</h1>
+    <h1><a href="/">Where in the world?</a></h1>
     <a class="darkModeBtn" on:click={toggleMode} href="/">
       <div>
         <i class=" {mode ? 'fa-solid' : 'fa-regular'} fa-moon" />

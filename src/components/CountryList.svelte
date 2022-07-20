@@ -5,7 +5,7 @@
 
   export let countries
 
-  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania','All']
+  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'All']
 
   let countriesList = []
   let nameFilter = null
@@ -25,21 +25,8 @@
   }
 
   const filterByRegion = (region) => {
-    if(region.toLowerCase() === 'all')  return countriesList
+    if (region.toLowerCase() === 'all') return countriesList
     return [...countriesList].filter((x) => x.region.toLowerCase() == region.toLowerCase())
-  }
-
-  const sortBy = (sortField, sortOrder) => {
-    const arr = [...countriesList]
-    switch (sortField) {
-      case 'name':
-        arr.sort((a) => a.name.common)
-      case 'region':
-        arr.sort((a) => a.region)
-      case 'population':
-        arr.sort((a, b) => a.population - b.population)
-    }
-    return sortOrder == 'asc' ? arr : arr.reverse()
   }
 
   const onChangeSelect = (event) => {
